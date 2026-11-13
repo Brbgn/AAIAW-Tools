@@ -41,7 +41,3 @@ These figures come from synthetic data. The demo was tested in an automated Chro
 - Uses the bundled JSZip library (v3.10.1, MIT/GPLv3 dual-licensed) inside the HTML file.
 
 For business-critical use, test with representative data and obtain approval from your organization's security team.
-
-## GitHub Pages (optional)
-
-After publishing the repository, you can enable Pages via **Settings → Pages**, deploy from the default branch and root directory, then open the `01-Excel-Difference-Detective/` path on your repository's Pages site. The application will still run inside the reader's browser, but should be independently security-reviewed before public hosting.
