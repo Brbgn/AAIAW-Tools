@@ -32,4 +32,6 @@ Each mini-tool folder contains a runnable demonstration, sample data, a starting
 
 ## License
 
-**License not selected yet.** The HTML includes the JSZip third-party library (v3.10.1, dual MIT/GPLv3 license). Please choose a license for the original app code before inviting others to redistribute or modify it.
+The original code and documentation in this repository are released under the [MIT License](LICENSE). You may use, adapt, and redistribute them subject to that license's conditions.
+
+The application also bundles third-party software, including [JSZip v3.10.1](https://github.com/Stuk/jszip), which is dual-licensed under MIT or GPLv3, and its dependency [pako](https://github.com/nodeca/pako), licensed under MIT. Those components remain subject to their respective licenses. Their attribution notices are preserved in the distributed HTML application.
