@@ -1,54 +1,35 @@
-# Excel Difference Detective
+# AAIAW Tools
 
-Compare an original and updated `.xlsx` or `.csv` file in your browser. The app matches rows by a selected unique identifier and produces an itemized report of added, removed, and changed records.
+**Actual AI at Work (AAIAW)** is a collection of practical mini-tools and AI workflows for everyday office tasks. The examples are designed to be useful even if you have never written code.
 
-**[Launch Excel Difference Detective](https://brbgn.github.io/AAIAW-Tools/01-Excel-Difference-Detective/)**
+## Available tools
 
-## Get started
+| Episode | Tool | What it does |
+| --- | --- | --- |
+| #03 | [Excel Difference Detective](https://brbgn.github.io/AAIAW-Tools/01-Excel-Difference-Detective/) | Compare two Excel or CSV files by a unique ID, review changes, and export a detailed CSV report. |
 
-1. Open the online app, or download [the standalone HTML file](index.html) from GitHub and open it in a modern browser.
-2. Click **Try sample data** for an instant demonstration, or select your own files in the **Original file** and **Updated file** boxes.
-3. For the included workbooks, select the `Projects` worksheet and `Record ID` as the unique ID column.
-4. Click **Compare files**, review the differences, and use **Export CSV** if you want a report.
+## Try Excel Difference Detective
 
-The included [original workbook](Sample_Original.xlsx) and [updated workbook](Sample_Updated.xlsx) contain **fictional** project records. You can also inspect the [example difference report](Sample_Difference_Report.csv).
+- **[Launch the online tool](https://brbgn.github.io/AAIAW-Tools/01-Excel-Difference-Detective/)** in your browser. No account or installation is required.
+- **[Get the sample Excel files and instructions](01-Excel-Difference-Detective/README.md)** from the tool's folder.
+- **[Explore the source code](01-Excel-Difference-Detective/index.html)** or download the HTML file from GitHub to run it locally.
+- **[Use the starter prompt](01-Excel-Difference-Detective/Codex_Build_Prompt.txt)** to explore building a similar app with an AI coding assistant.
 
-## Verified example results
+To try a ready-made example, open the app and select **Try sample data**. The sample workbooks use fictional project records.
 
-| Metric | Expected result |
-| --- | ---: |
-| Records in original workbook | 75 |
-| Records in updated workbook | 77 |
-| Added records | 6 |
-| Removed records | 4 |
-| Changed records | 8 |
-| Changed individual fields | 11 |
-| Unchanged matching records | 63 |
+## Repository structure
 
-The example was checked with the included Excel files, CSV export, reordered rows, and duplicate identifiers in an automated browser test. This does not cover every possible workbook or establish suitability for business-critical processing.
+Each mini-tool has a numbered folder containing its application, sample data, build prompt, and documentation. The repository homepage is in `index.html`.
 
-## How the comparison works
+## Responsible use
 
-- Uses the unique ID column to match records, regardless of row order.
-- Rejects duplicate or missing IDs rather than guessing which records match.
-- Reports new and removed records, plus before-and-after values for changed fields.
-- Provides search, category filters, and a CSV export of the comparison results.
-- Leaves input files unchanged.
+- All included sample data is fictional. Do not commit employee, customer, financial, or other confidential business records to public GitHub repositories.
+- Check your organization's IT security and software policies before opening custom apps with work files.
+- Excel Difference Detective processes user-selected files inside the browser and does not intentionally upload workbook contents to a server. This is an educational tool, **not** a security certification or an enterprise reconciliation system.
+- Review the comparison findings independently before using them for business decisions. The tool does not recalculate formulas or compare macros, charts, or cell styling.
 
-## Limits to know about
+## License
 
-- Supports `.xlsx` and `.csv`, but not `.xls`, encrypted workbooks, or password-protected files.
-- Compares data values, not formatting, charts, macros, or formula text.
-- Does **not** recalculate Excel formulas. Formula cells use cached workbook values where available.
-- Warns about mismatched columns; only matching column headers can be compared field by field.
-- Uses the bundled JSZip library for Excel parsing.
+The original project code and documentation are available under the [MIT License](LICENSE). Reuse and redistribution are permitted subject to its terms.
 
-## Build your own version
-
-The [starter prompt](Codex_Build_Prompt.txt) describes the requirements and tests for a similar application. It can be adapted for AI coding assistants such as Codex or Claude Code. Generated code should be tested before use, especially when handling business data.
-
-## Privacy and licensing
-
-The app processes selected files locally in the browser and does not intentionally send their contents to a server. Follow your employer's security requirements before using it with work data.
-
-The original project code is available under the [MIT License](../LICENSE). The bundled JSZip and pako libraries retain their own licensing terms, described in the [third-party notices](../THIRD_PARTY_NOTICES.md).
+The application includes [JSZip v3.10.1](https://github.com/Stuk/jszip) (MIT or GPLv3) and its [pako](https://github.com/nodeca/pako) dependency (MIT). Their existing copyright notices are preserved in the HTML application. See [Third-party notices](THIRD_PARTY_NOTICES.md).
