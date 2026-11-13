@@ -1,0 +1,32 @@
+Act as a careful software engineer helping a non-programmer build a small internal browser tool.
+
+Build an Excel Difference Detective: a standalone HTML/CSS/JavaScript app I can open locally, without hosting a website or paying for an API. It should compare two user-selected Excel (.xlsx) or CSV files and tell me what changed between them.
+
+Business requirements:
+1. Let me choose an Original and an Updated file and select a worksheet for each.
+2. Let me choose a unique ID column that exists in both files. Match records by ID, not row position.
+3. Report added records, removed records, changed records, and changed fields. List each changed field with its before and after values.
+4. Show a clean summary dashboard with counts, searchable details, and filters by change type.
+5. Export the FULL comparison result as an Excel-friendly CSV file.
+6. Never overwrite or alter the original input files.
+7. Reject comparisons when the ID column has blank or duplicate values. Explain what the user needs to fix.
+8. Detect mismatched/missing column headers and report them instead of quietly claiming a perfect comparison.
+9. Compare values, not formatting. Do not recalculate formulas; disclose any limits relating to formula caches, dates, and unsupported Excel features.
+10. Make the UI responsive, readable, and suitable for non-technical colleagues.
+11. Keep all file handling inside the browser. Do not send workbook contents to any external server or analytics endpoint. Bundle any necessary JavaScript dependencies locally and include their license notices.
+
+Testing requirements:
+- Create two fictional test workbooks where you KNOW the correct number of added, removed, changed records, and changed individual fields.
+- Test that reordering rows creates zero false positives.
+- Test that duplicate IDs, missing IDs, and mismatched columns produce useful errors/warnings.
+- Test the exported CSV by opening and reading it, not just checking that a button exists.
+- Test the actual XLSX upload-and-parse flow, not only mocked JavaScript arrays.
+- Verify that the finished HTML opens and functions without internet access.
+
+Deliver:
+- A self-contained HTML file or a clearly packaged offline folder
+- Two synthetic .xlsx workbooks for demonstration
+- A short README with limitations and usage instructions
+- A test report identifying what was actually verified
+
+Do not claim success until you have run tests. Ask for confirmation before adding external APIs or server dependencies.
