@@ -1,0 +1,16 @@
+﻿SOP ID,Claim or rule,Source references,Disposition,Evidence or review note
+FIN-001,Region A eligible taxi <= €50 skips manager approval,SRC-02; SRC-04,Confirmed,Formal pilot and owner decision; effective 2026-11-16
+FIN-001,All locations skip taxi approval,SRC-03,Rejected,Informal chat is broader than formal pilot; Region B remains unchanged
+FIN-001,Readable receipt required for every claim,SRC-01; SRC-02; SRC-04,Confirmed,Requirement retained during pilot
+FIN-001,Claims submitted within 30 calendar days,SRC-01; SRC-02; SRC-04,Confirmed,Baseline and pilot agree
+FIN-001,Finance eligibility review applies to all claims,SRC-01; SRC-02; SRC-04,Confirmed,No Finance-review exception
+FIN-001,Above €50 or Region B routes to manager approval,SRC-02; SRC-04,Confirmed,Threshold inclusive at €50
+FIN-001,Non-taxi categories still require manager approval,SRC-01; SRC-02; SRC-04,Confirmed,Pilot applies only to eligible taxi claims
+FIN-001,Returned claims are corrected and resubmitted,SRC-01; SRC-04,Confirmed,Owner resolves resubmission route
+FIN-001,Managers cannot approve their own claims,SRC-04,Confirmed,Separate delegation policy controls designated approver
+FIN-001,Pilot extension beyond 2027-01-31,SRC-02; SRC-04,Not approved,Explicit decision required for extension
+FIN-001,Exact payment timing,No supporting source,Not documented,Do not invent service commitments
+IT-002,Identity verification precedes an authorized access reset,SRC-05,Confirmed,Verification controls are maintained separately
+IT-002,Potential compromise is escalated to Security,SRC-05,Confirmed,No routine reset when risk is present
+HR-003,HR opens a case after signed offer and confirmed start date,SRC-06,Confirmed,Required prerequisites
+HR-003,Unresolved day-one access is escalated and case remains open,SRC-06,Confirmed,IT Service Desk escalation
