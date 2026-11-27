@@ -1,18 +1,95 @@
 <!DOCTYPE html>
+<!--
+MIT License
+
+Copyright (c) 2026 Eugen G. Barbu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Third-party license notices
+
+JSZip v3.10.1 (MIT license option)
+Source: https://github.com/Stuk/jszip/blob/v3.10.1/LICENSE.markdown
+
+The MIT License
+===============
+
+Copyright (c) 2009-2016 Stuart Knightley, David Duponchel, Franz Buchinger, António Afonso
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+pako (MIT license)
+Source: https://github.com/nodeca/pako/blob/1.0.5/LICENSE
+
+(The MIT License)
+
+Copyright (C) 2014-2017 by Vitaly Puzrin and Andrei Tuputcyn
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
 <html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
 <title>AAIAW | Excel Difference Detective</title>
 <style>
 :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#071323;color:#eff6ff;font-synthesis:none;--text:#eff6ff;--muted:#aec0d4;--blue:#7fbaff;--teal:#8be3bf;--panel:#101f36;--border:#2d4260;--rose:#ff9dad;--gold:#ffd596}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse 900px 600px at 85% -10%,#1c4264 0%,#0c1c31 45%,#081423 100%)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}a{color:#90c5ff}header{max-width:1180px;margin:0 auto;padding:32px 26px 15px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:13px}.logo{width:49px;height:49px;border-radius:13px;border:1px solid #598cb9;background:#23456d;display:grid;place-items:center;font-weight:850;font-size:26px}.brand strong{font-size:20px;letter-spacing:1px;display:block}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.headtag{font-size:11px;border:1px solid var(--border);padding:8px 12px;border-radius:100px;color:#b9d1ea;background:#11283c;font-weight:700;letter-spacing:1px}main{max-width:1180px;margin:auto;padding:0 26px 70px}.hero{padding:40px 0 25px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px}.eyebrow{font-size:12px;letter-spacing:2.4px;color:var(--teal);font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(36px,5.1vw,59px);letter-spacing:-2px;line-height:1.05;margin:12px 0 13px;font-weight:830}.hero h1 span{color:#7fbaff}.sub{font-size:16px;line-height:1.7;color:#adc0d5;max-width:720px;margin:0}.header-icon{width:110px;height:110px;border:1px solid #385779;border-radius:24px;background:linear-gradient(140deg,#234a71,#142642);display:grid;place-items:center;font-size:46px;box-shadow:0 15px 60px #0002}.step{display:flex;align-items:center;gap:10px;color:#9fbbd8;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:12px 0 14px}.step .n{width:26px;height:26px;border-radius:9px;background:#21496a;color:#a4e4ff;display:grid;place-items:center}.panel{background:#112138ed;border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:0 14px 35px #0001}.topline{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:18px}.topline h2{font-size:20px;margin:0;letter-spacing:-.4px}.hint{font-size:12px;color:var(--muted);line-height:1.6}.btn{border-radius:12px;padding:12px 17px;border:1px solid #47698a;background:#234967;color:#ecf5ff;font-weight:750;font-size:13px;display:inline-flex;align-items:center;gap:9px;justify-content:center;transition:transform .13s,background .13s}.btn:hover:not(:disabled){transform:translateY(-1px);background:#2d597d}.btn.primary{background:#70b5ff;color:#081b2c;border-color:#70b5ff}.btn.primary:hover:not(:disabled){background:#96c9ff}.btn.ghost{background:#14283e;border-color:#3b5874}.files{display:grid;grid-template-columns:1fr 1fr;gap:16px}.drop{border:1.5px dashed #496685;background:#0d1d32;border-radius:17px;min-height:172px;display:flex;align-items:center;justify-content:center;position:relative;padding:22px;transition:background .2s,border-color .2s;cursor:pointer;text-align:center}.drop:hover,.drop.drag{background:#183451;border-color:#7ac7ff}.drop input{display:none}.drop .upicon{display:inline-grid;width:43px;height:43px;border-radius:12px;place-items:center;background:#1f3e5a;color:#80c0fb;font-size:23px;margin-bottom:10px}.drop strong{display:block;font-size:15px;margin:3px 0 7px}.drop small{display:block;color:#9fb5ca;line-height:1.5;font-size:12px}.drop .loaded{color:#9adfc6}.filemeta{font-size:11px;color:#829db8;word-break:break-all}.selector-grid{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:13px;align-items:end;margin-top:20px}.field label{display:block;color:#a5bdd4;font-size:12px;margin-bottom:8px;font-weight:700}.field select,.field input{width:100%;border:1px solid #3e5c78;border-radius:10px;padding:11px 12px;color:#f3f7fd;background:#0a1b30;outline:none}.field input:focus,.field select:focus{border-color:#7cbaff}.field input[type=number]{max-width:100px}.statusline{font-size:12px;color:#b3d1e9;margin-top:15px;min-height:18px}.statusline.error{color:#ff9cad}.statusline.success{color:#8ce5ba}.section-gap{height:18px}.privacy{display:flex;gap:10px;align-items:flex-start;background:#0f2c35;border:1px solid #2c625f;border-radius:14px;padding:12px 15px;color:#a0e3c6;font-size:12px;line-height:1.6;margin-top:15px}.privacy svg{flex-shrink:0}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.metric{border-radius:16px;background:#142941;border:1px solid #2b4864;padding:20px}.metric .value{font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.2}.metric .caption{font-size:12px;color:#adc2d8;margin-top:8px}.metric.green .value{color:#8de5b4}.metric.rose .value{color:#ff9ba9}.metric.gold .value{color:#ffd592}.metric.blue .value{color:#87bcff}.results{margin-top:18px}.toolrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between}.tabrow{display:flex;gap:5px;flex-wrap:wrap}.tab{background:transparent;border:1px solid transparent;border-radius:9px;color:#aec4db;padding:9px 11px;font-size:12px;font-weight:700}.tab.active{color:#101d2c;background:#a2cbfa}.searchrow{display:flex;gap:8px;align-items:center}.searchrow input{border:1px solid #3a5471;border-radius:9px;background:#0c2035;color:#ebf7ff;padding:10px 12px;font-size:12px;width:210px}.searchrow .btn{padding:10px 14px}.table-wrap{overflow-x:auto;margin-top:17px;border:1px solid #2b4762;border-radius:13px}table{width:100%;border-collapse:collapse;min-width:750px;font-size:13px}thead{background:#1b344d}th{text-align:left;color:#bfcee0;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:15px 13px}td{padding:13px;border-top:1px solid #253d57;color:#e6f2ff;vertical-align:top}tr:hover td{background:#17304a}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#dbeafd}.pill{font-size:10px;letter-spacing:.4px;font-weight:750;padding:5px 9px;white-space:nowrap;border-radius:100px;display:inline-block}.pill.added{background:#1b4b41;color:#98f0c1}.pill.removed{background:#503140;color:#ffb1bd}.pill.changed{background:#4b4027;color:#ffdda0}.before{color:#d7b6bc}.after{color:#b1f0cc}td.change{max-width:380px;word-break:break-word}.muted{color:#8ba6be}.warn{background:#382c26;border:1px solid #8f6e3f;color:#f2d3a0;padding:13px 15px;border-radius:12px;margin-top:15px;font-size:12px;line-height:1.7}.empty{padding:35px;text-align:center;color:#99b1ca;font-size:14px}.lower{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:12px;color:#9db7d0;gap:14px;flex-wrap:wrap}.details{font-size:11px;color:#96b2d0;margin-top:12px}.description{font-size:13px;color:#afc4d9;line-height:1.7}.foot{margin-top:24px;font-size:11px;line-height:1.75;color:#91a9c0;max-width:970px}a.inline{text-decoration:none;color:#9be4df}.hidden{display:none!important}.badge{padding:6px 9px;font-size:10px;font-weight:800;color:#adddf7;background:#1c4a68;border:1px solid #406b91;border-radius:100px}@media(max-width:900px){.selector-grid{grid-template-columns:1fr 1fr}.selector-grid .compare-cell{grid-column:1/-1}.selector-grid .compare-cell .btn{width:100%}.summary{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.header-icon{display:none}}@media(max-width:600px){header{padding:22px 16px 8px}main{padding:0 16px 50px}.hero{padding:22px 0}.files{grid-template-columns:1fr}.selector-grid{grid-template-columns:1fr}.selector-grid .compare-cell{grid-column:auto}.panel{padding:17px}.summary{gap:8px}.metric{padding:13px}.metric .value{font-size:31px}.headtag{display:none}.searchrow{width:100%}.searchrow input{flex:1;min-width:0}.hero h1{letter-spacing:-1px}.topline{align-items:start}}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse 900px 600px at 85% -10%,#1c4264 0%,#0c1c31 45%,#081423 100%)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}a{color:#90c5ff}header{max-width:1180px;margin:0 auto;padding:32px 26px 15px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:13px}.logo{width:49px;height:49px;border-radius:13px;border:1px solid #598cb9;background:#23456d;display:grid;place-items:center;font-weight:850;font-size:26px}.brand strong{font-size:20px;letter-spacing:1px;display:block}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.headtag{font-size:11px;border:1px solid var(--border);padding:8px 12px;border-radius:100px;color:#b9d1ea;background:#11283c;font-weight:700;letter-spacing:1px}main{max-width:1180px;margin:auto;padding:0 26px 70px}.hero{padding:40px 0 25px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px}.eyebrow{font-size:12px;letter-spacing:2.4px;color:var(--teal);font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(36px,5.1vw,59px);letter-spacing:-2px;line-height:1.05;margin:12px 0 13px;font-weight:830}.hero h1 span{color:#7fbaff}.sub{font-size:16px;line-height:1.7;color:#adc0d5;max-width:720px;margin:0}.header-icon{width:110px;height:110px;border:1px solid #385779;border-radius:24px;background:linear-gradient(140deg,#234a71,#142642);display:grid;place-items:center;font-size:46px;box-shadow:0 15px 60px #0002}.step{display:flex;align-items:center;gap:10px;color:#9fbbd8;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:12px 0 14px}.step .n{width:26px;height:26px;border-radius:9px;background:#21496a;color:#a4e4ff;display:grid;place-items:center}.panel{background:#112138ed;border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:0 14px 35px #0001}.topline{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:18px}.topline h2{font-size:20px;margin:0;letter-spacing:-.4px}.hint{font-size:12px;color:var(--muted);line-height:1.6}.btn{border-radius:12px;padding:12px 17px;border:1px solid #47698a;background:#234967;color:#ecf5ff;font-weight:750;font-size:13px;display:inline-flex;align-items:center;gap:9px;justify-content:center;transition:transform .13s,background .13s}.btn:hover:not(:disabled){transform:translateY(-1px);background:#2d597d}.btn.primary{background:#70b5ff;color:#081b2c;border-color:#70b5ff}.btn.primary:hover:not(:disabled){background:#96c9ff}.btn.ghost{background:#14283e;border-color:#3b5874}.files{display:grid;grid-template-columns:1fr 1fr;gap:16px}.drop{border:1.5px dashed #496685;background:#0d1d32;border-radius:17px;min-height:172px;display:flex;align-items:center;justify-content:center;position:relative;padding:22px;transition:background .2s,border-color .2s;cursor:pointer;text-align:center}.drop:hover,.drop.drag{background:#183451;border-color:#7ac7ff}.drop input{position:absolute;width:1px;height:1px;opacity:0;inset:0;overflow:hidden}.drop:focus-within{outline:3px solid #9bcaff;outline-offset:3px}.drop strong{overflow-wrap:anywhere}.table-hint{display:none}.pill.unverified{background:#3a4664;color:#d7e6ff}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #9bcaff;outline-offset:2px}@media(max-width:850px){.table-hint{display:block;margin:12px 0 0}}.drop .upicon{display:inline-grid;width:43px;height:43px;border-radius:12px;place-items:center;background:#1f3e5a;color:#80c0fb;font-size:23px;margin-bottom:10px}.drop strong{display:block;font-size:15px;margin:3px 0 7px}.drop small{display:block;color:#9fb5ca;line-height:1.5;font-size:12px}.drop .loaded{color:#9adfc6}.filemeta{font-size:11px;color:#829db8;word-break:break-all}.selector-grid{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:13px;align-items:end;margin-top:20px}.field label{display:block;color:#a5bdd4;font-size:12px;margin-bottom:8px;font-weight:700}.field select,.field input{width:100%;border:1px solid #3e5c78;border-radius:10px;padding:11px 12px;color:#f3f7fd;background:#0a1b30;outline:none}.field input:focus,.field select:focus{border-color:#7cbaff}.field input[type=number]{max-width:100px}.statusline{font-size:12px;color:#b3d1e9;margin-top:15px;min-height:18px}.statusline.error{color:#ff9cad}.statusline.success{color:#8ce5ba}.statusline.warning{color:#ffd596}.section-gap{height:18px}.privacy{display:flex;gap:10px;align-items:flex-start;background:#0f2c35;border:1px solid #2c625f;border-radius:14px;padding:12px 15px;color:#a0e3c6;font-size:12px;line-height:1.6;margin-top:15px}.privacy svg{flex-shrink:0}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.metric{border-radius:16px;background:#142941;border:1px solid #2b4864;padding:20px}.metric .value{font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.2}.metric .caption{font-size:12px;color:#adc2d8;margin-top:8px}.metric.green .value{color:#8de5b4}.metric.rose .value{color:#ff9ba9}.metric.gold .value{color:#ffd592}.metric.blue .value{color:#87bcff}.results{margin-top:18px}.toolrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between}.tabrow{display:flex;gap:5px;flex-wrap:wrap}.tab{background:transparent;border:1px solid transparent;border-radius:9px;color:#aec4db;padding:9px 11px;font-size:12px;font-weight:700}.tab.active{color:#101d2c;background:#a2cbfa}.searchrow{display:flex;gap:8px;align-items:center}.searchrow input{border:1px solid #3a5471;border-radius:9px;background:#0c2035;color:#ebf7ff;padding:10px 12px;font-size:12px;width:210px}.searchrow .btn{padding:10px 14px}.table-wrap{overflow-x:auto;margin-top:17px;border:1px solid #2b4762;border-radius:13px}table{width:100%;border-collapse:collapse;min-width:750px;font-size:13px}thead{background:#1b344d}th{text-align:left;color:#bfcee0;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:15px 13px}td{padding:13px;border-top:1px solid #253d57;color:#e6f2ff;vertical-align:top}tr:hover td{background:#17304a}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#dbeafd}.pill{font-size:10px;letter-spacing:.4px;font-weight:750;padding:5px 9px;white-space:nowrap;border-radius:100px;display:inline-block}.pill.added{background:#1b4b41;color:#98f0c1}.pill.removed{background:#503140;color:#ffb1bd}.pill.changed{background:#4b4027;color:#ffdda0}.before{color:#d7b6bc}.after{color:#b1f0cc}td.change{max-width:380px;word-break:break-word}.muted{color:#8ba6be}.warn{background:#382c26;border:1px solid #8f6e3f;color:#f2d3a0;padding:13px 15px;border-radius:12px;margin-top:15px;font-size:12px;line-height:1.7}.empty{padding:35px;text-align:center;color:#99b1ca;font-size:14px}.lower{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:12px;color:#9db7d0;gap:14px;flex-wrap:wrap}.details{font-size:11px;color:#96b2d0;margin-top:12px}.description{font-size:13px;color:#afc4d9;line-height:1.7}.foot{margin-top:24px;font-size:11px;line-height:1.75;color:#91a9c0;max-width:970px}a.inline{text-decoration:none;color:#9be4df}.hidden{display:none!important}.badge{padding:6px 9px;font-size:10px;font-weight:800;color:#adddf7;background:#1c4a68;border:1px solid #406b91;border-radius:100px}@media(max-width:900px){.selector-grid{grid-template-columns:1fr 1fr}.selector-grid .compare-cell{grid-column:1/-1}.selector-grid .compare-cell .btn{width:100%}.summary{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.header-icon{display:none}}@media(max-width:600px){header{padding:22px 16px 8px}main{padding:0 16px 50px}.hero{padding:22px 0}.files{grid-template-columns:1fr}.selector-grid{grid-template-columns:1fr}.selector-grid .compare-cell{grid-column:auto}.panel{padding:17px}.summary{gap:8px}.metric{padding:13px}.metric .value{font-size:31px}.headtag{display:none}.searchrow{width:100%}.searchrow input{flex:1;min-width:0}.hero h1{letter-spacing:-1px}.topline{align-items:start}}
 </style></head>
 <body><header><div class="brand"><div class="logo">A</div><div><strong>AAIAW</strong><small>ACTUAL AI AT WORK</small></div></div><span class="headtag">MINI-TOOLS / EPISODE 03</span></header>
 <main>
-<section class="hero"><div><div class="eyebrow">No code needed · Local browser tool</div><h1>Excel Difference <span>Detective.</span></h1><p class="sub">Two versions of the same spreadsheet. One clear answer about what changed. Match records by ID, find changes, and export a clean differences report.</p></div><div class="header-icon" aria-hidden="true">▤</div></section>
+<section class="hero"><div><div class="eyebrow">No code needed · Local browser tool</div><h1>Excel Difference <span>Detective.</span></h1><p class="sub">Compare two versions of a spreadsheet by a unique record ID. Review added, removed and changed records, then export the results.</p></div><div class="header-icon" aria-hidden="true">▤</div></section>
 <div class="step"><span class="n">1</span> Choose your files</div>
 <section class="panel"><div class="topline"><h2>Compare two versions</h2><button id="demoBtn" class="btn ghost" type="button">✦ Try sample data</button></div>
 <div class="files">
-<label class="drop" id="oldDrop"><input id="oldFile" type="file" accept=".xlsx,.csv"/><div><span class="upicon">1</span><strong id="oldName">Original file</strong><small id="oldDescription">Drop an .xlsx or .csv file here<br/>or click to browse</small></div></label>
-<label class="drop" id="newDrop"><input id="newFile" type="file" accept=".xlsx,.csv"/><div><span class="upicon">2</span><strong id="newName">Updated file</strong><small id="newDescription">Drop an .xlsx or .csv file here<br/>or click to browse</small></div></label>
+<label class="drop" id="oldDrop"><input id="oldFile" type="file" accept=".xlsx,.csv" aria-label="Choose original file"/><div><span class="upicon">1</span><strong id="oldName">Original file</strong><small id="oldDescription">Drop an .xlsx or .csv file here<br/>or click to browse</small></div></label>
+<label class="drop" id="newDrop"><input id="newFile" type="file" accept=".xlsx,.csv" aria-label="Choose updated file"/><div><span class="upicon">2</span><strong id="newName">Updated file</strong><small id="newDescription">Drop an .xlsx or .csv file here<br/>or click to browse</small></div></label>
 </div>
 <div class="selector-grid"><div class="field"><label for="oldSheet">Original sheet</label><select id="oldSheet" disabled><option>Choose a file first</option></select></div><div class="field"><label for="newSheet">Updated sheet</label><select id="newSheet" disabled><option>Choose a file first</option></select></div><div class="field"><label for="keyField">Unique ID column</label><select id="keyField" disabled><option>Choose files first</option></select></div><div class="compare-cell"><button id="compareBtn" class="btn primary" type="button" disabled>Compare files →</button></div></div>
 <div id="status" class="statusline" role="status" aria-live="polite">Select both files, or try the included fictional example.</div>
@@ -21,10 +98,10 @@
 <section id="resultsArea" class="hidden">
 <div class="summary"><div class="metric green"><div class="value" id="addedCount">0</div><div class="caption">Added records</div></div><div class="metric rose"><div class="value" id="removedCount">0</div><div class="caption">Removed records</div></div><div class="metric gold"><div class="value" id="modifiedCount">0</div><div class="caption">Changed records</div></div><div class="metric blue"><div class="value" id="cellsCount">0</div><div class="caption">Changed fields</div></div></div>
 <div class="panel results"><div class="topline"><h2>Difference report</h2><span id="tableMeta" class="hint">Select a category to review changes</span></div>
-<div class="toolrow"><div class="tabrow"><button class="tab active" data-filter="all">All changes</button><button class="tab" data-filter="changed">Changed</button><button class="tab" data-filter="added">Added</button><button class="tab" data-filter="removed">Removed</button></div><div class="searchrow"><input id="search" type="search" placeholder="Find an ID, field, or value" aria-label="Search results"/><button class="btn" type="button" id="exportBtn">↓ Export CSV</button></div></div>
-<div class="table-wrap"><table><thead><tr><th>Type</th><th>Record ID</th><th>Field</th><th>Before</th><th>After</th></tr></thead><tbody id="rowsBody"></tbody></table><div class="empty hidden" id="empty">No matching differences found.</div></div><div class="lower"><span id="resultShown"></span><button id="moreBtn" class="btn ghost hidden">Show more</button></div><div class="details" id="details"></div><div id="warnings"></div></div></section>
-<section class="panel" id="introInfo"><h2 style="margin-top:0">What does it catch?</h2><p class="description">A new record, a deleted record, a changed budget, or a status update. The tool uses a unique ID instead of row position, so sorting your spreadsheet won't produce a pile of false alarms. It also stops the comparison if IDs are missing or duplicated.</p><p class="description" style="margin-bottom:0">For the AAIAW tutorial, start with the sample data. The original workbook has 75 fictional project records. The updated one contains deliberate changes so we can check the results.</p></section>
-<div class="foot"><strong>Important:</strong> This is a practical demonstration, not a replacement for financial controls or an independently validated enterprise reconciliation tool. It compares cell values, not visual formatting, charts, workbook formulas, or macros. Formula cells use stored cached values when available, and formulas are not recalculated. Review all findings before using them in operational decisions. For shared workbooks, follow your organization's security and retention policies.</div>
+<div class="toolrow"><div class="tabrow"><button class="tab active" data-filter="all" aria-pressed="true">All results</button><button class="tab" data-filter="changed" aria-pressed="false">Changed</button><button class="tab" data-filter="added" aria-pressed="false">Added</button><button class="tab" data-filter="removed" aria-pressed="false">Removed</button><button class="tab" data-filter="unverified" aria-pressed="false">Unverified</button></div><div class="searchrow"><input id="search" type="search" placeholder="Find an ID, field, or value" aria-label="Search results"/><button class="btn" type="button" id="exportBtn">↓ Export CSV</button></div></div>
+<p class="hint table-hint">Scroll the table horizontally to see every column.</p><div class="table-wrap" tabindex="0" aria-label="Comparison results, horizontally scrollable"><table><thead><tr><th>Type</th><th>Record ID</th><th>Field</th><th>Before</th><th>After</th></tr></thead><tbody id="rowsBody"></tbody></table><div class="empty hidden" id="empty">No matching report entries found.</div></div><div class="lower"><span id="resultShown"></span><button id="moreBtn" class="btn ghost hidden">Show more</button></div><div class="details" id="details"></div><div id="warnings"></div></div></section>
+<section class="panel" id="introInfo"><h2 style="margin-top:0">What does it catch?</h2><p class="description">The tool matches records using a unique ID, so changing row order has no effect. It detects additions, removals and changed field values. Correct missing or duplicate IDs before comparing.</p><p class="description" style="margin-bottom:0">Try the fictional sample data first. The original contains 75 project records, and the updated version includes changes you can review.</p></section>
+<div class="foot"><strong>Important:</strong> Use this tool to assist your review and retain the required financial controls. It compares stored cell values. Formatting, charts, workbook formulas and macros are outside its comparison scope. Dates stored as Excel serial numbers remain numeric. Formulas with unavailable cached results are flagged as unverified. Review all findings before using them in operational decisions. For shared workbooks, follow your organization's security and retention policies.</div>
 </main>
 <script>
 /*!
@@ -46,9 +123,12 @@ window.AAIAW_DEMO={"headers": ["Record ID", "Department", "Project", "Owner", "S
 'use strict';
 const $=id=>document.getElementById(id);
 const state={old:null,new:null,changes:[],totals:null,filter:'all',show:150,warnings:[]};
+const fileRequests={old:0,new:0};
+const MAX_ROWS=125000,MAX_COLUMNS=201;
+const UNAVAILABLE_FORMULA=Object.freeze({unavailableFormula:true});
 const excelExt=/\.xlsx$/i;const csvExt=/\.csv$/i;
 function setStatus(s,kind=''){const el=$('status');el.textContent=s;el.className='statusline '+kind}
-function clean(v){return (v??'').toString()}
+function clean(v){return v===UNAVAILABLE_FORMULA?'Formula result unavailable':String(v??'')}
 function norm(s){return clean(s).trim().toLowerCase().replace(/\s+/g,' ')}
 function escaped(s){return clean(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function sheetByName(obj,name){return obj?.sheets?.find(s=>s.name===name)}
@@ -58,58 +138,103 @@ function direct(node,name){return Array.from(node?.children||[]).find(n=>n.local
 function columnNum(label){let v=0;for(const ch of label.toUpperCase()){let n=ch.charCodeAt(0)-64;if(n<1||n>26)return -1;v=v*26+n;}return v-1}
 function resolvedPath(target){let t=target.replace(/^\/+/, '');if(t.startsWith('xl/'))return t;let parts=['xl'];for(let k of t.split('/')){if(k==='..')parts.pop();else if(k!=='.'&&k)parts.push(k)}return parts.join('/')}
 async function loadXlsx(file){
- const z=await JSZip.loadAsync(await file.arrayBuffer());let entry=z.file('xl/workbook.xml');if(!entry)throw Error('This .xlsx file does not contain a standard workbook.');
- const w=parseXML(await entry.async('string'));
+ let z;
+ try{z=await JSZip.loadAsync(await file.arrayBuffer())}catch(e){throw Error('Could not open the .xlsx workbook. Check that it is a valid, unprotected Excel file.')}
+ const workbookEntry=z.file('xl/workbook.xml');if(!workbookEntry)throw Error('This .xlsx file does not contain a standard workbook.');
+ const workbook=parseXML(await workbookEntry.async('string'));
  const relEntry=z.file('xl/_rels/workbook.xml.rels');if(!relEntry)throw Error('Workbook sheet relationships were not found.');
- const relDoc=parseXML(await relEntry.async('string'));const rels=new Map(localElements(relDoc,'Relationship').map(r=>[r.getAttribute('Id'),r.getAttribute('Target')]));
+ const relDoc=parseXML(await relEntry.async('string'));
+ const rels=new Map(localElements(relDoc,'Relationship').map(r=>[r.getAttribute('Id'),{target:r.getAttribute('Target'),type:r.getAttribute('Type'),external:r.getAttribute('TargetMode')==='External'}]));
  const shared=[];
- if(z.file('xl/sharedStrings.xml')){const sDoc=parseXML(await z.file('xl/sharedStrings.xml').async('string'));for(const si of localElements(sDoc,'si'))shared.push(localElements(si,'t').map(t=>t.textContent).join(''))}
- const warnings=[];const sheets=[];
- for(let s of localElements(w,'sheet')){
-  const name=s.getAttribute('name')||'Sheet';
-  let id=Array.from(s.attributes).find(a=>a.localName==='id')?.value;
-  const target=rels.get(id);if(!target)throw Error('Could not resolve worksheet '+name);
-  const sp=resolvedPath(target);const entry=z.file(sp);if(!entry)throw Error('Missing worksheet '+sp);
-  const xml=parseXML(await entry.async('string'));const output=[];
+ if(z.file('xl/sharedStrings.xml')){
+  const doc=parseXML(await z.file('xl/sharedStrings.xml').async('string'));
+  for(const si of localElements(doc,'si'))shared.push(localElements(si,'t').map(t=>t.textContent).join(''));
+ }
+ const warnings=[],sheets=[];
+ for(const definition of localElements(workbook,'sheet')){
+  const name=definition.getAttribute('name')||'Sheet';
+  const id=Array.from(definition.attributes).find(a=>a.localName==='id')?.value;
+  const relation=rels.get(id);if(!relation||!relation.target||relation.external)throw Error('Could not resolve worksheet '+name);
+  if(relation.type&&!relation.type.endsWith('/worksheet')){warnings.push(name+' is not a standard worksheet and was excluded.');continue}
+  const location=resolvedPath(relation.target);const entry=z.file(location);if(!entry)throw Error('Missing worksheet '+location);
+  const xml=parseXML(await entry.async('string')),output=[],sheetWarnings=[];
+  let formulaCount=0;
   for(const r of localElements(xml,'sheetData').flatMap(e=>Array.from(e.children).filter(x=>x.localName==='row'))){
-   const rowidx=(Number(r.getAttribute('r'))||output.length+1)-1;
-   if(rowidx>125000)throw Error('This demo supports up to 125,000 worksheet rows.');
-   const row=[];
+   const ref=r.getAttribute('r');const rowidx=ref===null?output.length:Number(ref)-1;
+   if(!Number.isInteger(rowidx)||rowidx<0||rowidx>=MAX_ROWS)throw Error(name+': supported limit is '+MAX_ROWS.toLocaleString('en-US')+' worksheet rows.');
+   const row=[];let nextColumn=0;
    for(const cell of Array.from(r.children).filter(x=>x.localName==='c')){
-    const rawRef=(cell.getAttribute('r')||'').match(/^[A-Z]+/i);
-    if(!rawRef)continue;const cidx=columnNum(rawRef[0]);if(cidx<0||cidx>200)continue;
-    const kind=cell.getAttribute('t')||'n';const v=direct(cell,'v')?.textContent??null;
-    const f=direct(cell,'f');let value='';
-    if(kind==='inlineStr')value=localElements(cell,'t').map(x=>x.textContent).join('');
-    else if(kind==='s')value=shared[Number(v)]??'';
-    else if(kind==='b')value=v==='1';
-    else if(kind==='n'&&v!==null){const x=Number(v);value=Number.isFinite(x)?x:v}
-    else if(v!==null)value=v;
-    if(f&&v===null){warnings.push(`${name}!${cell.getAttribute('r')} contains a formula without a cached result.`);value='[FORMULA: NOT CALCULATED]'}
+    const ref=cell.getAttribute('r');const rawRef=ref?.match(/^[A-Z]+/i);const cidx=rawRef?columnNum(rawRef[0]):nextColumn;
+    nextColumn=cidx+1;
+    const kind=cell.getAttribute('t')||'n',v=direct(cell,'v')?.textContent??null,f=direct(cell,'f');
+    const inlineValue=kind==='inlineStr'?localElements(cell,'t').map(x=>x.textContent).join(''):'';
+    if(cidx<0||cidx>=MAX_COLUMNS){if(f||v!==null&&v!==''||inlineValue)throw Error(name+': populated data exceeds the supported '+MAX_COLUMNS+' columns.');continue}
+    let value='';
+    if(f&&(v===null||v===''&&kind!=='str')){
+     value=UNAVAILABLE_FORMULA;formulaCount++;
+     if(sheetWarnings.length<5)sheetWarnings.push(name+'!'+(ref||'row '+(rowidx+1))+' contains a formula without a cached result.');
+    }else if(kind==='inlineStr')value=inlineValue;
+    else if(kind==='s'&&v!==null&&v!==''){
+     const index=Number(v);if(!Number.isInteger(index)||index<0||index>=shared.length)throw Error(name+': invalid shared string reference.');value=shared[index];
+    }else if(kind==='b'&&v!==null&&v!=='')value=v==='1';
+    else if(kind==='n'&&v!==null&&v!==''){
+     const number=Number(v);value=Number.isFinite(number)&&numericCanon(v)===numericCanon(String(number))?number:v;
+    }else if(v!==null)value=v;
     row[cidx]=value;
    }
    output[rowidx]=row;
   }
-  sheets.push({name,rows:output});
+  if(formulaCount>sheetWarnings.length)sheetWarnings.push((formulaCount-sheetWarnings.length)+' further cells in '+name+' have unavailable formula results.');
+  sheets.push({name,rows:output,warnings:sheetWarnings});
  }
- if(!sheets.length)throw Error('No worksheets were found.');
+ if(!sheets.length)throw Error('No standard worksheets were found.');
  return {name:file.name,sheets,warnings};
 }
-function guessDelimiter(line){const cands=[',',';','\t'];let best=',',score=-1;for(let d of cands){let q=false,n=0;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"')q=!q;else if(c===d&&!q)n++}if(n>score){score=n;best=d}}return best}
-function parseCSV(text){
- text=text.replace(/^\uFEFF/,'');const delim=guessDelimiter(text.split(/\r?\n/,1)[0]);let rows=[],row=[],field='',quoted=false;
+
+function guessDelimiter(text){
+ const counts={',':0,';':0,'\t':0};let quoted=false;
  for(let i=0;i<text.length;i++){
-  let c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){field+='"';i++}else quoted=!quoted}
-  else if(c===delim&&!quoted){row.push(field);field=''}
-  else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);rows.push(row);field='';row=[]}
-  else field+=c;
+  const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){i++;continue}quoted=!quoted}
+  else if(!quoted&&(c==='\n'||c==='\r'))break;
+  else if(!quoted&&Object.hasOwn(counts,c))counts[c]++;
  }
- if(quoted)throw Error('CSV contains an unclosed quote.');if(row.length||field){row.push(field);rows.push(row)}
+ return Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0];
+}
+function parseCSV(text){
+ text=text.replace(/^\uFEFF/,'');const delim=guessDelimiter(text);
+ const rows=[];let row=[],field='',mode='start';
+ const pushField=()=>{row.push(field);field='';mode='start';};
+ const pushRow=()=>{pushField();rows.push(row);row=[];};
+ for(let i=0;i<text.length;i++){
+  const c=text[i];
+  if(mode==='quoted'){
+   if(c==='"'){if(text[i+1]==='"'){field+='"';i++}else mode='closed'}else field+=c;
+   continue;
+  }
+  if(c===delim){pushField();continue}
+  if(c==='\n'||c==='\r'){if(c==='\r'&&text[i+1]==='\n')i++;pushRow();continue}
+  if(mode==='closed')throw Error('CSV contains unexpected characters after a closing quote.');
+  if(c==='"'){if(mode!=='start')throw Error('CSV contains an unexpected quote in an unquoted field.');mode='quoted'}
+  else{field+=c;mode='bare'}
+ }
+ if(mode==='quoted')throw Error('CSV contains an unclosed quote.');
+ if(row.length||field||mode==='closed')pushRow();
  return rows;
 }
-async function loadFile(file){if(excelExt.test(file.name))return loadXlsx(file);if(csvExt.test(file.name))return {name:file.name,sheets:[{name:'CSV Data',rows:parseCSV(await file.text())}],warnings:[]};throw Error('Please select an .xlsx or .csv file.');}
+async function loadFile(file){
+ if(excelExt.test(file.name))return loadXlsx(file);
+ if(csvExt.test(file.name)){
+  let data=await file.arrayBuffer(),bytes=new Uint8Array(data),encoding='utf-8';
+  if(bytes[0]===0xff&&bytes[1]===0xfe)encoding='utf-16le';else if(bytes[0]===0xfe&&bytes[1]===0xff)encoding='utf-16be';
+  let text;
+  try{text=new TextDecoder(encoding,{fatal:true}).decode(data)}catch(e){throw Error('CSV encoding could not be read. Save the file as UTF-8 CSV or UTF-16 with a byte-order mark.');}
+  return {name:file.name,sheets:[{name:'CSV Data',rows:parseCSV(text),warnings:[]}],warnings:[]};
+ }
+ throw Error('Please select an .xlsx or .csv file.');
+}
+
 function opts(select,arr,selected){select.innerHTML=arr.map(x=>`<option value="${escaped(x)}" ${x===selected?'selected':''}>${escaped(x)}</option>`).join('');select.disabled=arr.length===0}
-function getHeaders(sheet){if(!sheet)return [];let r=sheet.rows[0]||[];return r.map(x=>clean(x)).filter(Boolean)}
+function getHeaders(sheet){if(!sheet)return [];let r=sheet.rows[0]||[];return r.map(x=>clean(x)).filter(x=>norm(x))}
 function alignSelectors(){
  const old=$('oldSheet'),nw=$('newSheet');
  if(state.old)opts(old,state.old.sheets.map(s=>s.name),old.value&&sheetByName(state.old,old.value)?old.value:(state.old.sheets.find(s=>s.name==='Projects')||state.old.sheets[0]).name);
@@ -127,79 +252,133 @@ function updateKeys(){
  $('compareBtn').disabled=!a||!b||!common.length;
 }
 function showFile(side){let f=state[side];$(side+'Name').textContent=f?f.name:(side==='old'?'Original file':'Updated file');$(side+'Description').innerHTML=f?'<span class="loaded">✓ Ready to compare</span><br/><span class="filemeta">'+f.sheets.length+' sheet(s) available</span>':'Drop an .xlsx or .csv file here<br/>or click to browse'}
-async function setFile(side,file){if(!file)return;setStatus('Reading '+file.name+'…');try{state[side]=await loadFile(file);showFile(side);alignSelectors();$('resultsArea').classList.add('hidden');$('introInfo').classList.remove('hidden');setStatus('File ready. '+(state.old&&state.new?'Choose your ID column and compare.':'Select the other file to continue.'),'success')}catch(e){console.error(e);setStatus(e.message||'Could not read the file.','error')}}
-function loadDemo(){const data=window.AAIAW_DEMO;state.old={name:'Project_Tracker_Original.xlsx (demo)',sheets:[{name:'Projects',rows:[data.headers,...data.original]}],warnings:[]};state.new={name:'Project_Tracker_Updated.xlsx (demo)',sheets:[{name:'Projects',rows:[data.headers,...data.updated]}],warnings:[]};showFile('old');showFile('new');$('oldSheet').value='Projects';$('newSheet').value='Projects';alignSelectors();$('keyField').value='Record ID';compare()}
+function invalidateResults(){
+ state.changes=[];state.totals=null;state.warnings=[];state.filter='all';state.show=150;
+ $('resultsArea').classList.add('hidden');$('introInfo').classList.remove('hidden');
+}
+function selectionChanged(){invalidateResults();updateKeys();setStatus($('compareBtn').disabled?'Choose files and a shared header.':'Selections changed. Compare files again.');}
+async function setFile(side,file){
+ if(!file)return;const request=++fileRequests[side];
+ state[side]=null;invalidateResults();showFile(side);alignSelectors();setStatus('Reading '+file.name+'…');
+ try{
+  const loaded=await loadFile(file);if(request!==fileRequests[side])return;
+  state[side]=loaded;showFile(side);alignSelectors();
+  if(state.old&&state.new&&$('compareBtn').disabled)setStatus('No matching headers found. Check that both selected sheets have a header row.','error');
+  else setStatus('File ready. '+(state.old&&state.new?'Choose your ID column and compare.':'Select the other file to continue.'),'success');
+ }catch(e){if(request!==fileRequests[side])return;setStatus(e.message||'Could not read the file.','error');}
+}
+
+function loadDemo(){fileRequests.old++;fileRequests.new++;invalidateResults();$('oldFile').value='';$('newFile').value='';const data=window.AAIAW_DEMO;state.old={name:'Project_Tracker_Original.xlsx (demo)',sheets:[{name:'Projects',rows:[data.headers,...data.original]}],warnings:[]};state.new={name:'Project_Tracker_Updated.xlsx (demo)',sheets:[{name:'Projects',rows:[data.headers,...data.updated]}],warnings:[]};showFile('old');showFile('new');$('oldSheet').value='Projects';$('newSheet').value='Projects';alignSelectors();$('keyField').value='Record ID';compare()}
 function readDataset(sheet,keyName,filename){
  if(!sheet)throw Error('Please select both sheets.');
- const headers=sheet.rows[0]||[];const byNorm=new Map();const originalNames=new Map();
- for(let i=0;i<headers.length;i++){let header=clean(headers[i]);if(!header)continue;let k=norm(header);if(byNorm.has(k))throw Error(`${filename}: duplicate column header "${header}".`);byNorm.set(k,i);originalNames.set(k,header)}
+ const headers=sheet.rows[0]||[],byNorm=new Map(),originalNames=new Map(),namedIndices=new Set();
+ for(let i=0;i<headers.length;i++){
+  const header=clean(headers[i]),normalized=norm(header);if(!normalized)continue;
+  if(headers[i]===UNAVAILABLE_FORMULA)throw Error(filename+': header row contains an unavailable formula result.');
+  if(byNorm.has(normalized))throw Error(`${filename}: duplicate column header "${header}".`);
+  byNorm.set(normalized,i);originalNames.set(normalized,header);namedIndices.add(i);
+ }
  const keyCol=byNorm.get(norm(keyName));if(keyCol===undefined)throw Error(`${filename}: missing ID column "${keyName}".`);
- const rows=new Map();let blanks=[],dupes=[];
+ const rows=new Map(),blanks=[],dupes=[];
  sheet.rows.slice(1).forEach((row,i)=>{
-  if(!row||!row.some(x=>x!==undefined&&x!==null&&clean(x).trim()!==''))return;
-  const id=clean(row[keyCol]).trim();const physicalRow=i+2;
-  if(!id){blanks.push(physicalRow);return}
+  if(!row||!row.some(x=>clean(x).trim()!==''))return;
+  const physicalRow=i+2;
+  for(let col=0;col<row.length;col++)if(!namedIndices.has(col)&&clean(row[col]).trim()!=='')throw Error(`${filename}: row ${physicalRow} contains data under a blank or missing column header (column ${col+1}).`);
+  const idValue=row[keyCol],id=clean(idValue).trim();
+  if(!id||idValue===UNAVAILABLE_FORMULA){blanks.push(physicalRow);return}
   if(rows.has(id)){dupes.push(id);return}
-  const values={};for(const [n,index] of byNorm){values[n]=row[index]??''}
-  rows.set(id,values)
+  const values=Object.create(null);for(const [name,index] of byNorm)values[name]=row[index]??'';
+  rows.set(id,values);
  });
- if(blanks.length)throw Error(`${filename}: ${blanks.length} row(s) have blank IDs, including row ${blanks[0]}. Correct the data before comparing.`);
+ if(blanks.length)throw Error(`${filename}: ${blanks.length} row(s) have blank IDs or unavailable ID values, including row ${blanks[0]}. Correct the data before comparing.`);
  if(dupes.length)throw Error(`${filename}: duplicate IDs detected (${dupes.slice(0,3).join(', ')}). Fix the key column before comparing.`);
  return {headers:byNorm,names:originalNames,rows};
 }
-function canon(v){if(v===null||v===undefined||v==='')return 'empty:';if(typeof v==='boolean')return 'bool:'+v;if(typeof v==='number')return 'number:'+v;const s=String(v);if(/^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?$/.test(s)&&Number.isFinite(Number(s)))return 'number:'+Number(s);return 'text:'+s}
-function display(v){return v===null||v===undefined?'':String(v)}
+function numericCanon(value){
+ const match=/^(-?)(0|[1-9]\d*)(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/.exec(String(value));
+ if(!match)return null;
+ const [,sign,integer,fraction='',exponent='0']=match;if(exponent.length>10)return null;
+ const all=integer+fraction,withoutLeading=all.replace(/^0+/,'');if(!withoutLeading)return '0';
+ const digits=withoutLeading.replace(/0+$/,'');
+ const scale=BigInt(exponent)-BigInt(fraction.length)+BigInt(withoutLeading.length-digits.length);
+ return sign+digits+'e'+scale;
+}
+function canon(v){
+ if(v===null||v===undefined||v==='')return 'empty:';
+ if(typeof v==='boolean')return 'bool:'+v;
+ const numeric=numericCanon(v);return numeric!==null?'number:'+numeric:'text:'+String(v);
+}
+function display(v){return v===UNAVAILABLE_FORMULA?'Formula result unavailable':String(v??'')}
+function recordSnapshot(values){return JSON.stringify(Object.fromEntries(Object.entries(values).map(([name,value])=>[name,value===UNAVAILABLE_FORMULA?display(value):value])))}
+
 function compare(){
  try{
-  const old=readDataset(sheetByName(state.old,$('oldSheet').value),$('keyField').value,state.old.name),newD=readDataset(sheetByName(state.new,$('newSheet').value),$('keyField').value,state.new.name);
-  let oldH=[...old.headers.keys()],newH=[...newD.headers.keys()],intersection=oldH.filter(x=>newD.headers.has(x)&&x!==norm($('keyField').value));
-  const missingFromNew=oldH.filter(x=>!newD.headers.has(x)),missingFromOld=newH.filter(x=>!old.headers.has(x));
-  const changes=[];let adds=0,removals=0,mods=0,cells=0,unchanged=0;
-  const keys=[...new Set([...old.rows.keys(),...newD.rows.keys()])].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
-  for(const key of keys){const ov=old.rows.get(key),nv=newD.rows.get(key);
-   if(!ov){adds++;changes.push({type:'added',key,field:'Whole record',before:'',after:JSON.stringify(nv)});continue}
-   if(!nv){removals++;changes.push({type:'removed',key,field:'Whole record',before:JSON.stringify(ov),after:''});continue}
-   let found=false;for(const h of intersection){if(canon(ov[h])!==canon(nv[h])){cells++;found=true;changes.push({type:'changed',key,field:newD.names.get(h),before:display(ov[h]),after:display(nv[h])})}}
-   if(found)mods++;else unchanged++;
+  const oldSheet=sheetByName(state.old,$('oldSheet').value),newSheet=sheetByName(state.new,$('newSheet').value);
+  const old=readDataset(oldSheet,$('keyField').value,state.old.name),updated=readDataset(newSheet,$('keyField').value,state.new.name);
+  const keyName=norm($('keyField').value),oldH=[...old.headers.keys()],newH=[...updated.headers.keys()];
+  const common=oldH.filter(x=>updated.headers.has(x)&&x!==keyName),missingFromNew=oldH.filter(x=>!updated.headers.has(x)),missingFromOld=newH.filter(x=>!old.headers.has(x));
+  const changes=[];let adds=0,removals=0,mods=0,cells=0,unchanged=0,incomplete=0,unavailable=0;
+  const keys=[...new Set([...old.rows.keys(),...updated.rows.keys()])].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+  for(const key of keys){
+   const ov=old.rows.get(key),nv=updated.rows.get(key);
+   if(!ov){adds++;changes.push({type:'added',key,field:'Whole record',before:'',after:recordSnapshot(nv)});continue}
+   if(!nv){removals++;changes.push({type:'removed',key,field:'Whole record',before:recordSnapshot(ov),after:''});continue}
+   let found=false,unknown=common.length===0;
+   if(!common.length)changes.push({type:'unverified',key,field:'No shared non-ID fields',before:'',after:''});
+   for(const h of common){
+    if(ov[h]===UNAVAILABLE_FORMULA||nv[h]===UNAVAILABLE_FORMULA){
+     unavailable++;unknown=true;changes.push({type:'unverified',key,field:updated.names.get(h),before:display(ov[h]),after:display(nv[h])});continue;
+    }
+    if(canon(ov[h])!==canon(nv[h])){cells++;found=true;changes.push({type:'changed',key,field:updated.names.get(h),before:display(ov[h]),after:display(nv[h])})}
+   }
+   if(found)mods++;else if(unknown)incomplete++;else unchanged++;
   }
-  state.changes=changes;state.totals={adds,removals,mods,cells,unchanged,original:old.rows.size,updated:newD.rows.size};state.filter='all';state.show=150;
-  state.warnings=[...state.old.warnings,...state.new.warnings];
+  state.changes=changes;state.totals={adds,removals,mods,cells,unchanged,incomplete,unavailable,original:old.rows.size,updated:updated.rows.size};state.filter='all';state.show=150;
+  state.warnings=[...state.old.warnings,...(oldSheet.warnings||[])].map(note=>'Original: '+note).concat([...state.new.warnings,...(newSheet.warnings||[])].map(note=>'Updated: '+note));
   if(missingFromNew.length)state.warnings.push('Columns only in original file: '+missingFromNew.map(x=>old.names.get(x)).join(', ')+'. These columns were excluded from cell-by-cell comparison.');
-  if(missingFromOld.length)state.warnings.push('Columns only in updated file: '+missingFromOld.map(x=>newD.names.get(x)).join(', ')+'. These columns were excluded from cell-by-cell comparison.');
-  if(!intersection.length)state.warnings.push('No common non-ID columns found; only added and removed records were compared.');
+  if(missingFromOld.length)state.warnings.push('Columns only in updated file: '+missingFromOld.map(x=>updated.names.get(x)).join(', ')+'. These columns were excluded from cell-by-cell comparison.');
+  if(!common.length)state.warnings.push('No common non-ID columns found; only additions and removals can be confirmed.');
+  if(unavailable)state.warnings.push(`${unavailable} field pair(s) could not be verified because a stored formula result was unavailable. Confirm the results in the workbooks.`);
+  if(incomplete)state.warnings.push(`${incomplete} matching record(s) cannot be classified as unchanged.`);
   $('addedCount').textContent=adds;$('removedCount').textContent=removals;$('modifiedCount').textContent=mods;$('cellsCount').textContent=cells;
   $('resultsArea').classList.remove('hidden');$('introInfo').classList.add('hidden');$('search').value='';
-  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.filter==='all'));
-  $('details').textContent=`Original: ${old.rows.size} records · Updated: ${newD.rows.size} records · Unchanged records: ${unchanged} · Matched on “${$('keyField').value}”.`;
+  document.querySelectorAll('.tab').forEach(t=>{const selected=t.dataset.filter==='all';t.classList.toggle('active',selected);t.setAttribute('aria-pressed',String(selected))});
+  $('details').textContent=`Original: ${old.rows.size} records · Updated: ${updated.rows.size} records · Unchanged across compared fields: ${unchanged} · Unverified matching records: ${incomplete} · Matched on “${$('keyField').value}”.`;
   $('warnings').innerHTML=state.warnings.length?'<div class="warn"><strong>Review notes</strong><br/>'+state.warnings.slice(0,10).map(escaped).join('<br/>')+(state.warnings.length>10?`<br/>... and ${state.warnings.length-10} more.`:'')+'</div>':'';
-  setStatus(`Comparison complete: ${adds} added, ${removals} removed, ${mods} changed records, ${cells} changed fields.`,'success');render();
+  setStatus(`Comparison complete: ${adds} added, ${removals} removed, ${mods} changed records, ${cells} changed fields.`+(unavailable?` ${unavailable} unverified field pair(s).`:'')+(state.warnings.length?' Review the notes below.':''),state.warnings.length?'warning':'success');render();
   $('resultsArea').scrollIntoView({behavior:'smooth',block:'start'});
- }catch(e){console.error(e);setStatus(e.message||'Comparison failed.','error');$('resultsArea').classList.add('hidden')}
+ }catch(e){invalidateResults();setStatus(e.message||'Comparison failed.','error');}
 }
+
 function getFiltered(){const q=norm($('search').value);return state.changes.filter(x=>(state.filter==='all'||x.type===state.filter)&&(!q||[x.key,x.field,x.before,x.after,x.type].some(v=>norm(v).includes(q))))}
-function snapshotPreview(raw){if(!raw)return '';try{const x=JSON.parse(raw);const parts=[];for(const field of ['project','department','status','owner','budget']){if(x[field]!==undefined){const names={project:'Project',department:'Dept',status:'Status',owner:'Owner',budget:'Budget'};parts.push(`${names[field]}: ${x[field]}`)}}return parts.join(' · ')||raw}catch(e){return raw}}
+function snapshotPreview(raw){
+ if(!raw)return '';try{return Object.entries(JSON.parse(raw)).map(([field,value])=>field+': '+display(value)).join(' · ')||raw}catch(e){return raw}
+}
+
 function render(){
  const all=getFiltered(),part=all.slice(0,state.show);
- $('rowsBody').innerHTML=part.map(r=>'<tr><td><span class="pill '+r.type+'">'+r.type.toUpperCase()+'</span></td><td class="mono">'+escaped(r.key)+'</td><td>'+escaped(r.field)+'</td><td class="change before">'+(r.before?escaped(r.type==='removed'?snapshotPreview(r.before):r.before):'<span class="muted">—</span>')+'</td><td class="change after">'+(r.after?escaped(r.type==='added'?snapshotPreview(r.after):r.after):'<span class="muted">—</span>')+'</td></tr>').join('');
- $('empty').classList.toggle('hidden',all.length>0);$('resultShown').textContent=`Showing ${part.length} of ${all.length} difference entries`;$('moreBtn').classList.toggle('hidden',all.length<=state.show);
- $('tableMeta').textContent=state.filter==='all'?'All detected differences':state.filter[0].toUpperCase()+state.filter.slice(1)+' records';
+ $('rowsBody').innerHTML=part.map(r=>'<tr><td><span class="pill '+r.type+'">'+r.type.toUpperCase()+'</span></td><td class="mono">'+escaped(r.key)+'</td><td>'+escaped(r.field)+'</td><td class="change before">'+(r.before?escaped(r.type==='removed'?snapshotPreview(r.before):r.before):'<span class="muted">Blank</span>')+'</td><td class="change after">'+(r.after?escaped(r.type==='added'?snapshotPreview(r.after):r.after):'<span class="muted">Blank</span>')+'</td></tr>').join('');
+ $('empty').classList.toggle('hidden',all.length>0);$('resultShown').textContent=`Showing ${part.length} of ${all.length} report entries`;$('moreBtn').classList.toggle('hidden',all.length<=state.show);
+ $('tableMeta').textContent=state.filter==='all'?'All comparison results':state.filter[0].toUpperCase()+state.filter.slice(1)+' entries';
 }
 function safeCsv(s){let text=display(s);if(/^[\s]*[=+\-@\t\r]/.test(text))text="'"+text;return '"'+text.replace(/"/g,'""')+'"'}
 function exportCSV(){
- if(!state.changes.length){setStatus('No differences to export.','error');return}
- const rows=[['Type','Record ID','Field','Original value','Updated value'],...state.changes.map(r=>[r.type,r.key,r.field,r.before,r.after])];
+ if(!state.totals){setStatus('Compare the files before exporting.','error');return}
+ const rows=[['Type','Record ID','Field','Original value','Updated value'],...state.changes.map(r=>[r.type,r.key,r.field,r.before,r.after]),...state.warnings.map(note=>['note','','Comparison note','',note])];
  const csv='\uFEFF'+rows.map(r=>r.map(safeCsv).join(',')).join('\r\n');
- const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Excel_Difference_Report.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=url;a.download='Excel_Difference_Report.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
 }
+
 for(const side of ['old','new']){
- const drop=$(side+'Drop'),input=$(side+'File');input.addEventListener('change',e=>setFile(side,e.target.files?.[0]));
+ const drop=$(side+'Drop'),input=$(side+'File');input.addEventListener('change',e=>{const file=e.target.files?.[0];e.target.value='';setFile(side,file)});
  ['dragenter','dragover'].forEach(name=>drop.addEventListener(name,e=>{e.preventDefault();drop.classList.add('drag')}));
  ['dragleave','drop'].forEach(name=>drop.addEventListener(name,e=>{e.preventDefault();drop.classList.remove('drag')}));
  drop.addEventListener('drop',e=>setFile(side,e.dataTransfer?.files?.[0]));
 }
 $('demoBtn').addEventListener('click',loadDemo);$('compareBtn').addEventListener('click',compare);
-['oldSheet','newSheet'].forEach(id=>$(id).addEventListener('change',updateKeys));
-document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{state.filter=t.dataset.filter;state.show=150;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b===t));render()}));
+['oldSheet','newSheet'].forEach(id=>$(id).addEventListener('change',selectionChanged));$('keyField').addEventListener('change',()=>{invalidateResults();setStatus('ID column changed. Compare files again.');});
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{state.filter=t.dataset.filter;state.show=150;document.querySelectorAll('.tab').forEach(b=>{b.classList.toggle('active',b===t);b.setAttribute('aria-pressed',String(b===t))});render()}));
 $('search').addEventListener('input',()=>{state.show=150;render()});$('moreBtn').addEventListener('click',()=>{state.show+=150;render()});$('exportBtn').addEventListener('click',exportCSV);
 
 </script></body></html>
