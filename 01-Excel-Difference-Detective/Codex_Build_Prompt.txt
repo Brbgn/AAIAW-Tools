@@ -10,16 +10,16 @@ Business requirements:
 5. Export the FULL comparison result as an Excel-friendly CSV file.
 6. Never overwrite or alter the original input files.
 7. Reject comparisons when the ID column has blank or duplicate values. Explain what the user needs to fix.
-8. Detect mismatched/missing column headers and report them instead of quietly claiming a perfect comparison.
-9. Compare values, not formatting. Do not recalculate formulas; disclose any limits relating to formula caches, dates, and unsupported Excel features.
+8. Reject duplicate headers and populated columns that have no header. Report schema differences and fields excluded from comparison.
+9. Compare stored values; disclose date and formatting limitations. Use cached formula values and explicitly mark missing caches as unverified. Preserve precise numeric text and distinguish leading-zero identifiers.
 10. Make the UI responsive, readable, and suitable for non-technical colleagues.
-11. Keep all file handling inside the browser. Do not send workbook contents to any external server or analytics endpoint. Bundle any necessary JavaScript dependencies locally and include their license notices.
+11. Invalidate previous results when a file, worksheet or key changes. Keep all file handling inside the browser. Do not send workbook contents to any external server or analytics endpoint. Bundle any necessary JavaScript dependencies locally and include their license notices.
 
 Testing requirements:
 - Create two fictional test workbooks where you KNOW the correct number of added, removed, changed records, and changed individual fields.
 - Test that reordering rows creates zero false positives.
-- Test that duplicate IDs, missing IDs, and mismatched columns produce useful errors/warnings.
-- Test the exported CSV by opening and reading it, not just checking that a button exists.
+- Test duplicate or missing IDs, duplicate/missing headers, mismatched schemas, cached and uncached formulas, precise numeric strings, and file replacement.
+- Download and read the exported CSV, including a zero-difference report. Check that filtering does not remove entries from the export.
 - Test the actual XLSX upload-and-parse flow, not only mocked JavaScript arrays.
 - Verify that the finished HTML opens and functions without internet access.
 
