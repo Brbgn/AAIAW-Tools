@@ -10,11 +10,11 @@ Keep a record of commitments across recurring meetings. Use an AI assistant to e
 
 1. Select **New workspace** and name the meeting group or project.
 2. Open **New meeting**, choose the meeting date and paste the transcript or notes. A plain text file also works.
-3. Select **Generate AI prompt**, then **Copy AI prompt**. Paste it into an AI assistant approved for the information you are sharing. The prompt includes existing records so the assistant can refer to their IDs.
+3. Select **Generate AI prompt**, then **Copy AI prompt**. Paste it into an AI assistant approved for the information you are sharing. The prompt includes current records and a context code. The assistant must return that code with its response.
 4. Copy the assistant's JSON response into the response field or upload it as a JSON file. Select **Validate and review**.
 5. Check each proposal against the notes. Accept, reject or edit it as appropriate. Select **Apply reviewed changes** to record the meeting. If no changes are proposed, the meeting can still be recorded.
 
-If a response fails validation, ask the assistant to return the requested JSON format. Do not accept a proposed change merely because the quoted evidence appears in the notes. Check whether the quotation supports the change. Possible duplicates and missing details require human review.
+If validation fails, ask the assistant for the requested JSON format. Generate a fresh prompt if the notes or records have changed. Responses without the current context code cannot be imported. Read each quotation and check that it supports the proposed update. Review possible duplicates and missing details.
 
 ## Try the fictional example
 
@@ -26,9 +26,9 @@ Select **Try demo** to explore a workspace containing three recorded operations 
 | 2026-12-04 | [Meeting 02](examples/02-meeting-transcript.txt) | [Response 02](examples/02-ai-response.json) |
 | 2026-12-07 | [Meeting 03](examples/03-meeting-transcript.txt) | [Response 03](examples/03-ai-response.json) |
 
-Accept the three proposals from Meeting 01 in their supplied order. The later example responses use the resulting IDs. After all three meetings, the tracker contains four records: two completed actions, one open action and one unconfirmed suggestion. The analysis deadline changes once.
+Use the exact example notes and dates. Accept the three proposals from Meeting 01 in their supplied order. The later example responses use the resulting IDs. After all three meetings, the tracker contains four records: two completed actions, one open action and one unconfirmed suggestion. The analysis deadline changes once.
 
-The [sample backup](examples/demo-workspace.json) and [sample CSV](examples/sample-action-tracker.csv) represent the state after Meeting 01. Restoring a backup replaces all workspaces, so export existing data first. The example JSON responses are written examples, not responses collected from a live AI service.
+The [sample backup](examples/demo-workspace.json) and [sample CSV](examples/sample-action-tracker.csv) represent the state after Meeting 01. Restoring a backup replaces all workspaces, so export existing data first. The response files contain authored examples for practice. No live AI service was used to produce them.
 
 ## Use the tracker between meetings
 
@@ -42,9 +42,9 @@ The [sample backup](examples/demo-workspace.json) and [sample CSV](examples/samp
 
 The application does not send notes or tracker data to a server. It generates a prompt for manual use with an external AI assistant. Submitting that prompt shares its contents with the chosen service, including the notes and existing records. Follow organizational data handling policies and do not publish real workplace data in public repositories.
 
-Browser storage is not encrypted by the application. It may be unavailable in restricted browsers or cleared by browser policies. Storage is specific to the browser profile and site or file location; moving from a downloaded copy to a hosted copy does not transfer records automatically. Keep JSON backups in an approved location and restore them when moving between copies. Avoid editing the same tracker in multiple browser tabs.
+Browser storage is not encrypted by the application. It may be unavailable in restricted browsers or cleared by browser policies. Storage is specific to the browser profile and site or file location; moving from a downloaded copy to a hosted copy does not transfer records automatically. Keep JSON backups in an approved location and restore them when moving between copies. Use one tab per tracker. If another tab changes the saved data, export your unsaved work and reload. If existing storage cannot be read, it is preserved until you explicitly restore a backup.
 
-The tracker does not provide shared access, live transcription or automatic email delivery. It checks the structure of AI responses and whether evidence quotations appear in the notes. It cannot verify the meaning of a quotation or guarantee that the assistant identified every commitment.
+The tracker does not provide shared access, live transcription or automatic email delivery. It checks the structure of AI responses and whether evidence quotations appear in the notes. Read the original notes to verify the meaning of each quotation and check for missing commitments.
 
 ## License
 
