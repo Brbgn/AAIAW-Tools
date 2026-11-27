@@ -1,51 +1,52 @@
-# Meeting Intelligence & Action Tracker
+# AAIAW Tools
 
-Actual AI at Work / 05
+**Actual AI at Work (AAIAW)** is a collection of practical mini-tools and AI workflows for everyday office tasks. The examples are designed to be useful even if you have never written code.
 
-Keep a record of commitments across recurring meetings. Use an AI assistant to extract proposals from notes, then review the proposed changes in the tracker before they are recorded.
+## Available tools and learning kits
 
-**[Launch the application](https://brbgn.github.io/AAIAW-Tools/05-Meeting-Intelligence-Tracker/)** or use GitHub’s download control on [index.html](index.html) and open the downloaded file in a modern browser that permits local HTML files. The tracker requires no account, API key or additional software.
-
-## Record a meeting
-
-1. Select **New workspace** and name the meeting group or project.
-2. Open **New meeting**, choose the meeting date and paste the transcript or notes. A plain text file also works.
-3. Select **Generate AI prompt**, then **Copy AI prompt**. Paste it into an AI assistant approved for the information you are sharing. The prompt includes current records and a context code. The assistant must return that code with its response.
-4. Copy the assistant's JSON response into the response field or upload it as a JSON file. Select **Validate and review**.
-5. Check each proposal against the notes. Accept, reject or edit it as appropriate. Select **Apply reviewed changes** to record the meeting. If no changes are proposed, the meeting can still be recorded.
-
-If validation fails, ask the assistant for the requested JSON format. Generate a fresh prompt if the notes or records have changed. Responses without the current context code cannot be imported. Read each quotation and check that it supports the proposed update. Review possible duplicates and missing details.
-
-## Try the fictional example
-
-Select **Try demo** to explore a workspace containing three recorded operations meetings. To practice the import process yourself, create a separate empty workspace and use these examples in order:
-
-| Meeting date | Notes | Example response |
+| Episode | Resource | What it does |
 | --- | --- | --- |
-| 2026-11-27 | [Meeting 01](examples/01-meeting-transcript.txt) | [Response 01](examples/01-ai-response.json) |
-| 2026-12-04 | [Meeting 02](examples/02-meeting-transcript.txt) | [Response 02](examples/02-ai-response.json) |
-| 2026-12-07 | [Meeting 03](examples/03-meeting-transcript.txt) | [Response 03](examples/03-ai-response.json) |
+| #05 | [Meeting Intelligence & Action Tracker](https://brbgn.github.io/AAIAW-Tools/05-Meeting-Intelligence-Tracker/) | Extract meeting commitments with an AI assistant, review updates, and maintain an action tracker across meetings. |
+| #04 | [SOP Knowledge Kit](https://brbgn.github.io/AAIAW-Tools/04-SOP-Knowledge-Kit/) | Turn scattered fictional evidence into clear SOPs, organize them in a searchable ledger, and maintain change history. |
+| #03 | [Excel Difference Detective](https://brbgn.github.io/AAIAW-Tools/01-Excel-Difference-Detective/) | Compare two Excel or CSV files by a unique ID, review changes, and export a detailed CSV report. |
 
-Use the exact example notes and dates. Accept the three proposals from Meeting 01 in their supplied order. The later example responses use the resulting IDs. After all three meetings, the tracker contains four records: two completed actions, one open action and one unconfirmed suggestion. The analysis deadline changes once.
+## AAIAW #05: Meeting Intelligence & Action Tracker
 
-The [sample backup](examples/demo-workspace.json) and [sample CSV](examples/sample-action-tracker.csv) represent the state after Meeting 01. Restoring a backup replaces all workspaces, so export existing data first. The response files contain authored examples for practice. No live AI service was used to produce them.
+- **[Launch the tracker](https://brbgn.github.io/AAIAW-Tools/05-Meeting-Intelligence-Tracker/)** to record commitments across recurring meetings.
+- **[Read the guide](05-Meeting-Intelligence-Tracker/README.md)** and try the [fictional meeting examples](05-Meeting-Intelligence-Tracker/examples/).
+- **[Download the standalone HTML](05-Meeting-Intelligence-Tracker/index.html)** for use in a browser that permits local HTML files. The tracker uses manual prompt and response exchange with an approved AI assistant; no API key is required.
 
-## Use the tracker between meetings
+## AAIAW #04: SOP Knowledge Kit
 
-- **Dashboard:** See overdue records, upcoming deadlines and completion counts by owner.
-- **Tracker:** Search records, filter by status or type, add or edit records manually and export CSV for Excel or other spreadsheet software.
-- **History:** Inspect recorded meeting notes and accepted changes, including their supporting quotations.
-- **Agenda & email:** Prepare a next-meeting agenda and copy a follow-up draft. Review the draft before sending it.
-- **Data:** Export or restore a JSON backup. A CSV export is for reporting and cannot restore meeting history.
+- **[Explore the searchable example SOP catalog](https://brbgn.github.io/AAIAW-Tools/04-SOP-Knowledge-Kit/)** with Finance, IT, and People Operations examples.
+- **[Download the Excel master ledger](04-SOP-Knowledge-Kit/SOP_Master_Ledger.xlsx)** for categories, links, owners, review dates, and change tracking.
+- **[Use the Word SOP template](04-SOP-Knowledge-Kit/SOP_Template.docx)** and [completed expense example](04-SOP-Knowledge-Kit/FIN-001_Expense_Reimbursement.docx).
+- **[Read the fictional source pack](04-SOP-Knowledge-Kit/Source_Pack/)** and [reuse the AI workflow prompts](04-SOP-Knowledge-Kit/AI_SOP_Workflow_Prompts.txt).
+- **[Read the full #04 guide](04-SOP-Knowledge-Kit/README.md)** for the limits of AI-assisted SOP creation and retrieval.
 
-## Privacy and limitations
+## AAIAW #03: Excel Difference Detective
 
-The application does not send notes or tracker data to a server. It generates a prompt for manual use with an external AI assistant. Submitting that prompt shares its contents with the chosen service, including the notes and existing records. Follow organizational data handling policies and do not publish real workplace data in public repositories.
+- **[Launch the online tool](https://brbgn.github.io/AAIAW-Tools/01-Excel-Difference-Detective/)** in your browser. No account or installation is required.
+- **[Get the sample Excel files and instructions](01-Excel-Difference-Detective/README.md)** from the tool's folder.
+- **[Explore the source code](01-Excel-Difference-Detective/index.html)** or download the HTML file from GitHub to run it locally.
+- **[Use the starter prompt](01-Excel-Difference-Detective/Codex_Build_Prompt.txt)** to explore building a similar app with an AI coding assistant.
 
-Browser storage is not encrypted by the application. It may be unavailable in restricted browsers or cleared by browser policies. Storage is specific to the browser profile and site or file location; moving from a downloaded copy to a hosted copy does not transfer records automatically. Keep JSON backups in an approved location and restore them when moving between copies. Use one tab per tracker. If another tab changes the saved data, export your unsaved work and reload. If existing storage cannot be read, it is preserved until you explicitly restore a backup.
+To try a ready-made example, open the app and select **Try sample data**. The sample workbooks use fictional project records.
 
-The tracker does not provide shared access, live transcription or automatic email delivery. It checks the structure of AI responses and whether evidence quotations appear in the notes. Read the original notes to verify the meaning of each quotation and check for missing commitments.
+## Repository structure
+
+Each episode has a numbered folder with its demonstration, sample data, and documentation. The repository homepage is in `index.html`.
+
+## Responsible use
+
+- All included sample data is fictional. Do not commit employee, customer, financial, or other confidential business records to public GitHub repositories.
+- Check your organization's IT security and software policies before opening custom apps or using AI tools with work files.
+- Excel Difference Detective processes user-selected files inside the browser and does not intentionally upload workbook contents to a server. It is an educational tool, **not** a security certification or an enterprise reconciliation system.
+- The SOP Knowledge Kit illustrates document governance but does **not** automatically index an organization's Google Drive or SharePoint for AI. Real SOPs need authorized validation, publication, access controls, and version management.
+- Review important AI results independently before operational decisions.
 
 ## License
 
-Distributed under the repository's [MIT License](../LICENSE). No external libraries are bundled with this application.
+The original project code and documentation are available under the [MIT License](LICENSE). Reuse and redistribution are permitted subject to its terms.
+
+Excel Difference Detective includes [JSZip v3.10.1](https://github.com/Stuk/jszip) (MIT or GPLv3) and its [pako](https://github.com/nodeca/pako) dependency (MIT). Their existing copyright notices are preserved in the HTML application. See [Third-party notices](THIRD_PARTY_NOTICES.md).
