@@ -1,0 +1,24 @@
+{
+  "proposals": [
+    {
+      "op": "update",
+      "id": "A-001",
+      "title": "Repeat contact analysis",
+      "kind": "Action",
+      "owner": "Maria",
+      "due": "2026-12-07",
+      "status": "Completed",
+      "evidence": "Maria: The repeat contact analysis is complete."
+    },
+    {
+      "op": "new",
+      "id": "",
+      "title": "Update training materials",
+      "kind": "Action",
+      "owner": "Elena",
+      "due": "2026-12-11",
+      "status": "Open",
+      "evidence": "Elena: I will update training materials by 2026-12-11."
+    }
+  ]
+}
