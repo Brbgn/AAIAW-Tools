@@ -1,0 +1,34 @@
+{
+  "proposals": [
+    {
+      "op": "new",
+      "id": "",
+      "title": "Repeat contact analysis",
+      "kind": "Action",
+      "owner": "Maria",
+      "due": "2026-12-04",
+      "status": "Open",
+      "evidence": "Maria: I will deliver the repeat contact analysis by 2026-12-04."
+    },
+    {
+      "op": "new",
+      "id": "",
+      "title": "Staffing review",
+      "kind": "Action",
+      "owner": "Daniel",
+      "due": "",
+      "status": "Open",
+      "evidence": "Daniel: I will review staffing."
+    },
+    {
+      "op": "new",
+      "id": "",
+      "title": "Review onboarding",
+      "kind": "Action",
+      "owner": "",
+      "due": "",
+      "status": "Unconfirmed",
+      "evidence": "We should consider reviewing onboarding."
+    }
+  ]
+}

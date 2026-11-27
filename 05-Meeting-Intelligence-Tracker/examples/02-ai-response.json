@@ -1,0 +1,24 @@
+{
+  "proposals": [
+    {
+      "op": "update",
+      "id": "A-001",
+      "title": "Repeat contact analysis",
+      "kind": "Action",
+      "owner": "Maria",
+      "due": "2026-12-07",
+      "status": "Open",
+      "evidence": "Maria: I need until 2026-12-07 for the repeat contact analysis."
+    },
+    {
+      "op": "update",
+      "id": "A-002",
+      "title": "Staffing review",
+      "kind": "Action",
+      "owner": "Daniel",
+      "due": "",
+      "status": "Completed",
+      "evidence": "Daniel: The staffing review is complete."
+    }
+  ]
+}

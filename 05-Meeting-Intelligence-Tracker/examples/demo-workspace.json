@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "active": "demo-start",
+  "spaces": [
+    {
+      "id": "demo-start",
+      "name": "Demo | Weekly Operations Review",
+      "items": [
+        {
+          "id": "A-001",
+          "title": "Repeat contact analysis",
+          "owner": "Maria",
+          "due": "2026-12-04",
+          "status": "Open",
+          "kind": "Action",
+          "evidence": "Maria: I will deliver the repeat contact analysis by 2026-12-04.",
+          "updated": "2026-11-27"
+        },
+        {
+          "id": "A-002",
+          "title": "Staffing review",
+          "owner": "Daniel",
+          "due": "",
+          "status": "Open",
+          "kind": "Action",
+          "evidence": "Daniel: I will review staffing.",
+          "updated": "2026-11-27"
+        },
+        {
+          "id": "A-003",
+          "title": "Review onboarding",
+          "owner": "",
+          "due": "",
+          "status": "Unconfirmed",
+          "kind": "Action",
+          "evidence": "We should consider reviewing onboarding.",
+          "updated": "2026-11-27"
+        }
+      ],
+      "meetings": [
+        {
+          "id": "meeting-1",
+          "date": "2026-11-27",
+          "notes": "Maria: I will deliver the repeat contact analysis by 2026-12-04.\nDaniel: I will review staffing.\nWe should consider reviewing onboarding.",
+          "changes": [
+            {
+              "text": "Accept: Repeat contact analysis | Current: Maria, 2026-12-04, Open | Evidence: Maria: I will deliver the repeat contact analysis by 2026-12-04."
+            },
+            {
+              "text": "Accept: Staffing review | Current: Daniel, No deadline, Open | Evidence: Daniel: I will review staffing."
+            },
+            {
+              "text": "Accept: Review onboarding | Current: Unassigned, No deadline, Unconfirmed | Evidence: We should consider reviewing onboarding."
+            }
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-27",
+          "text": "Accept: Repeat contact analysis | Current: Maria, 2026-12-04, Open | Evidence: Maria: I will deliver the repeat contact analysis by 2026-12-04."
+        },
+        {
+          "date": "2026-11-27",
+          "text": "Accept: Staffing review | Current: Daniel, No deadline, Open | Evidence: Daniel: I will review staffing."
+        },
+        {
+          "date": "2026-11-27",
+          "text": "Accept: Review onboarding | Current: Unassigned, No deadline, Unconfirmed | Evidence: We should consider reviewing onboarding."
+        }
+      ]
+    }
+  ]
+}

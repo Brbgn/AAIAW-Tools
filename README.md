@@ -6,8 +6,15 @@
 
 | Episode | Resource | What it does |
 | --- | --- | --- |
+| #05 | [Meeting Intelligence & Action Tracker](https://brbgn.github.io/AAIAW-Tools/05-Meeting-Intelligence-Tracker/) | Extract meeting commitments with an AI assistant, review updates, and maintain an action tracker across meetings. |
 | #04 | [SOP Knowledge Kit](https://brbgn.github.io/AAIAW-Tools/04-SOP-Knowledge-Kit/) | Turn scattered fictional evidence into clear SOPs, organize them in a searchable ledger, and maintain change history. |
 | #03 | [Excel Difference Detective](https://brbgn.github.io/AAIAW-Tools/01-Excel-Difference-Detective/) | Compare two Excel or CSV files by a unique ID, review changes, and export a detailed CSV report. |
+
+## AAIAW #05: Meeting Intelligence & Action Tracker
+
+- **[Launch the tracker](https://brbgn.github.io/AAIAW-Tools/05-Meeting-Intelligence-Tracker/)** to record commitments across recurring meetings.
+- **[Read the guide](05-Meeting-Intelligence-Tracker/README.md)** and try the [fictional meeting examples](05-Meeting-Intelligence-Tracker/examples/).
+- **[Download the standalone HTML](05-Meeting-Intelligence-Tracker/index.html)** for use in a browser that permits local HTML files. The tracker uses manual prompt and response exchange with an approved AI assistant; no API key is required.
 
 ## AAIAW #04: SOP Knowledge Kit
 
